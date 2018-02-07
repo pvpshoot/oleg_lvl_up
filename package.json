@@ -1,0 +1,29 @@
+{
+  "name": "oleg_lvl_up",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "moduleDirectories": [
+      "functions",
+      "node_modules"
+    ],
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
+  },
+  "devDependencies": {
+    "babel-jest": "^22.2.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "jest": "^22.2.0"
+  }
+}
