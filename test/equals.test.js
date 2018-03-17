@@ -10,4 +10,8 @@ describe("equals сравнивает 2 аргумента", () => {
     expect(equals([1, 2, 3], [1, 2, 3])).toBeTruthy();
     expect(equals([1, 2, 3], [3, 2, 1])).toBeFalsy();
   });
+
+  test('массив и строка разные', () => {
+    expect(equals([], '')).toBeTruthy();
+  });
 });
