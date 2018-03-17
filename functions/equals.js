@@ -36,8 +36,6 @@ export default function equals (a, b) {
 
     let result = true;
     for (let key in a) {
-      console.log(a);
-      console.log(b);
       if (!equals(a[key], b[key])) {
         result = false;
       }
