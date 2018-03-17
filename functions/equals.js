@@ -2,7 +2,7 @@ export default function equals (a, b) {
   if (typeof a !== typeof b) {
     return false;
   }
-  
+
   if (typeof a === 'number' && typeof a === 'number') {
     return a === b;
   }
@@ -25,7 +25,11 @@ export default function equals (a, b) {
   }
 
   if (typeof a === 'object' && typeof b === 'object') {
-    
+
+    if(Object.keys(a).length === 0 && Object.keys(b).length === 0) {
+      return false;
+    }
+
     if(Object.keys(a).length !== Object.keys(b).length) {
       return false;
     }
