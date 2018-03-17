@@ -1,1 +1,3 @@
-export default (f, x) => {};
+export default (f, x) => {
+  return f(x);
+};
