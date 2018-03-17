@@ -1,6 +1,10 @@
-export default (a, b) => {
+export default function equals (a, b) {
   if (typeof a !== typeof b) {
     return false;
+  }
+  
+  if (typeof a === 'number' && typeof a === 'number') {
+    return a === b;
   }
 
   if (typeof a === "string" && typeof b === "string") {
@@ -19,4 +23,21 @@ export default (a, b) => {
     return result;
 
   }
+
+  if (typeof a === 'object' && typeof b === 'object') {
+    
+    if(Object.keys(a).length !== Object.keys(b).length) {
+      return false;
+    }
+
+    let result = true;
+    for (key in a) {
+      if (!equals(a[key], b[key])) {
+        result = false;
+      }
+    }
+
+    return result;
+  }
+
 };
