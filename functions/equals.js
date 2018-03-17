@@ -3,7 +3,7 @@ export default function equals (a, b) {
     return false;
   }
 
-  if (typeof a === 'number' && typeof a === 'number') {
+  if (typeof a === 'number' && typeof b === 'number') {
     return a === b;
   }
 
@@ -27,7 +27,7 @@ export default function equals (a, b) {
   if (typeof a === 'object' && typeof b === 'object') {
 
     if(Object.keys(a).length === 0 && Object.keys(b).length === 0) {
-      return false;
+      return true;
     }
 
     if(Object.keys(a).length !== Object.keys(b).length) {
@@ -35,7 +35,9 @@ export default function equals (a, b) {
     }
 
     let result = true;
-    for (key in a) {
+    for (let key in a) {
+      console.log(a);
+      console.log(b);
       if (!equals(a[key], b[key])) {
         result = false;
       }
